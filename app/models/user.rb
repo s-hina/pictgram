@@ -10,5 +10,13 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  #Userは複数のTopicを持っている
   has_many :topics
+  #Userは複数のFavoriteを持っている
+  has_many :favorites
+  #Userは複数のCommentを持っている
+  has_many :comments
+
+  #throughを使用してユーザーがいいねしたtopicデータをすべて取得
+  has_many :favorites_topics, through: :favorites, source: 'topic'
 end

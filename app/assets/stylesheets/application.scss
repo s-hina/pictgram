@@ -1,3 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "custom";
+//font-awesome-sass導入、以下の順番厳守
+@import 'font-awesome-sprockets';
+@import 'font-awesome';

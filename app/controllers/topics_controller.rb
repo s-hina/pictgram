@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    #「N+1問題」を防ぐ
+    @topics = Topic.all.includes(:favorite_users)
   end
 
   def new
