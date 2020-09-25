@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'pages/help'
 
   resources :users
-  resources :topics do
-    resources :comments
-  end
+  resources :topics
+  resources :comments
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

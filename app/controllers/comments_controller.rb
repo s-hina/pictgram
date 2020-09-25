@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
+    @topic_id = params[:topic_id]
   end
 
   def create
@@ -18,6 +19,6 @@ class CommentsController < ApplicationController
   #ストロングパラメータ
   private
   def comment_params
-    params.require(:comment).permit(:content, :topic_id)
+    params.require(:comment).permit(:content, :topic_id, :user_id)
   end
 end
